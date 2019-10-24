@@ -22,34 +22,3 @@
 #   main "$@"
 #
 # *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
-
-main () {
-    if [ $# -eq 1 ]
-        then
-            getFactor $1
-            exit 0
-        else
-            echo "Usage: ./raindrops.sh number"
-            exit 1
-    fi
-}
-
-getFactor () {
-    factorResult=""
-    if [ $(($1%3)) -eq 0 ]; then
-        factorResult=$factorResult"Pling"
-    fi
-    if [ $(($1%5)) -eq 0 ]; then
-        factorResult=$factorResult"Plang"
-    fi
-    if [ $(($1%7)) -eq 0 ]; then
-        factorResult=$factorResult"Plong"
-    fi
-    if [ -z $factorResult ]; then
-        echo $1
-    else
-        echo $factorResult
-    fi
-}
-
-main "$@"
